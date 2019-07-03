@@ -5,7 +5,6 @@ var vid = "SNvZipqVGAc", // "iGpuQ0ioPrM",
     video_obj = video_tag.get(0);
     
 $.get("https://images"+~~(Math.random()*33)+"-focus-opensocial.googleusercontent.com/gadgets/proxy?container=none&url=https%3A%2F%2Fwww.youtube.com%2Fget_video_info%3Fvideo_id%3D" + vid, function(data) {
-console.log(data);
     if (data) {
         streams = parse_youtube_meta(data);
         video_tag.attr({
@@ -50,7 +49,7 @@ function parse_youtube_meta(rawdata) {
                 140: "128kbps",
                 141: "256kbps"
             };
-        //if (stream.type.indexOf('o/mp4') > 0) console.log(stream);
+        if (stream.type.indexOf('o/mp4') > 0) console.log(stream);
         if (itag_map[itag]) result[itag_map[itag]] = stream.url;
     });
     return result;

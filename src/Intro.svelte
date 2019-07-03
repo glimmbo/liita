@@ -4,18 +4,39 @@
 
 <style>
   #container {
+    background-color: transparent;
     position: relative;
   }
 
-  h2 {
-    margin: 0;
-    text-align: center;
+  #slogan {
+    bottom: 2%;
+    left:0%;
+    right: 0%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
   }
+
+  h2 {
+    animation: slideUp 3s 8s forwards;
+    color: var(--pink);
+    font-family: 'Mr Dafoe';
+    font-size: 2em;
+    margin: 0;
+    opacity: 0;
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  @keyframes slideUp {
+    from {transform: translateY(10vh)}
+    to {opacity: 1;}
+  }
+  
 </style>
 
 <Title />
 
-<!-- <div id="info">
-    <h2>Let your love take flight</h2>
-    <p>See more below</p>
-  </div> -->
+<div id="slogan">
+  <h2>Let your love take flight</h2>
+</div>

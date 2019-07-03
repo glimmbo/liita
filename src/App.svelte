@@ -7,6 +7,7 @@
 
 <style>
 	section {
+		box-sizing: border-box;
 		height: 100vh;
 		width: 100vw;
 		scroll-snap-align: start;
@@ -17,12 +18,12 @@
 	<Intro/>
 </section>
 
-<section id="gallery">
-	<Gallery/>
-</section>
-
 <section id="description">
 	<Description/>
+</section>
+
+<section id="gallery">
+	<Gallery/>
 </section>
 
 <section id="contact">

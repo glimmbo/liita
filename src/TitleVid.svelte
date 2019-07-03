@@ -3,14 +3,13 @@
 </script>
 <style>
   #container {
-    /* background-image: url("https://source.unsplash.com/random/411x731"); */
     position: relative;
   }
 
   video {
     object-fit: cover;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
   }
   pre {
     color: red;
@@ -41,12 +40,12 @@
     font-size: 20em;
   }
   #isinthe {
-    font-family: 'Playfair Display';
+    font-family: 'Montserrat';
     font-weight: 700;
     font-size: 3em;
   }
   svg mask rect {
-    animation: fadeIn 10s 2s forwards;
+    animation: fadeIn 4s 7s forwards;
     /* fill: rgba(250, 247, 250, 1); */
   }
   svg > rect {
