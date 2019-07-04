@@ -6,28 +6,31 @@
   #container {
     background-color: var(--darkteal);
     height: 100%;
-    padding: 1em;
+    padding: 2em;
   }
   h1 {
     color: var(--white);
     font-family: "Mr Dafoe";
     font-size: 2.5em;
     letter-spacing: 0.1em;
+    margin-bottom: .5em;
+    margin-top: 0;
     text-align: center;
   }
   ul {
     color: var(--white);
-    text-align: center;
+    text-align: left;
     font-family: "Montserrat";
-    font-size: 2em;
-    list-style: none;
+    font-size: 1.5em;
+    list-style: outside url('heart.png');
+    margin: auto;
+    width: 50%;
   }
   p {
     color: var(--white);
     text-align: center;
     font-family: "Montserrat";
     font-size: 1.5em;
-    list-style: none;
   }
 </style>
 
@@ -45,7 +48,7 @@
     <li>... anything!</li>
   </ul>
   <p>
-    I can work together with your non-flying photographer, or independently. All
+    I can work together with your photographer, or independently. All
     footage will be captured at 1080p resolution with a DJI Spark.
   </p>
 </div>

@@ -1,5 +1,22 @@
 <script>
+  // import pics from "pics.json"?
+  import Modal from "./ImageModal.svelte";
 
+  let modal = {};
+  let showModal = false;
+
+  const showModalPic = e => {
+    e.preventDefault();
+    modal.src = e.currentTarget.src
+    modal.alt = e.currentTarget.alt
+    showModal = true;
+  };
+
+  const clearModal = e => {
+    e.preventDefault();
+    showModal = false;
+    modal = {};
+  }
 </script>
 
 <style>
@@ -11,31 +28,30 @@
     grid-template-rows: repeat(4, 25vh);
     position: relative;
   }
+
   img {
     display: block;
     height: 100%;
     width: 100%;
   }
-
-
-  /* try: on click, fills section. on click again, or scroll away, return to slot */
-  img:active {
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    z-index: 2;
-  }
 </style>
 
-<!-- https://codepen.io/tutsplus/pen/rQrVBg -->
-
 <div id="container">
-  <img src="heart.png" alt="">
-  <img src="heart.png" alt="">
-  <img src="heart.png" alt="">
-  <img src="heart.png" alt="">
-  <img src="heart.png" alt="">
-  <img src="heart.png" alt="">
-  <img src="heart.png" alt="">
-  <img src="heart.png" alt="">
+  <!-- {#each pics as pic}
+    <img src="{pic.src}" alt="{pic.description}">
+  {/each} -->
+  <img src="heart.png" alt="" on:click={showModalPic} />
+  <img src="ig.svg" alt="" on:click={showModalPic} />
+  <img src="heart.png" alt="" on:click={showModalPic} />
+  <img src="heart.png" alt="" on:click={showModalPic} />
+  <img src="heart.png" alt="" on:click={showModalPic} />
+  <img src="heart.png" alt="" on:click={showModalPic} />
+  <img src="heart.png" alt="" on:click={showModalPic} />
+  <img src="heart.png" alt="" on:click={showModalPic} />
+
+  {#if showModal}
+    <Modal on:close={clearModal}>
+      <img src="{modal.src}" alt="{modal.alt}" />
+    </Modal>
+  {/if}
 </div>

@@ -49,7 +49,7 @@ function parse_youtube_meta(rawdata) {
                 140: "128kbps",
                 141: "256kbps"
             };
-        if (stream.type.indexOf('o/mp4') > 0) console.log(stream);
+        // if (stream.type.indexOf('o/mp4') > 0) console.log(stream);
         if (itag_map[itag]) result[itag_map[itag]] = stream.url;
     });
     return result;
