@@ -1,4 +1,4 @@
-var vid = "SNvZipqVGAc", // "iGpuQ0ioPrM",
+var vid = "SNvZipqVGAc", // "iGpuQ0ioPrM", https://youtu.be/SNvZipqVGAc
     streams,
     video_focused = true,
     video_tag = $("#video"),

@@ -7,8 +7,7 @@
 
   const showModalPic = e => {
     e.preventDefault();
-    modal.src = e.currentTarget.src
-    modal.alt = e.currentTarget.alt
+    modal.src = e.currentTarget.style.backgroundImage.slice(5,-2);
     showModal = true;
   };
 
@@ -16,7 +15,7 @@
     e.preventDefault();
     showModal = false;
     modal = {};
-  }
+  };
 </script>
 
 <style>
@@ -29,29 +28,37 @@
     position: relative;
   }
 
-  img {
-    display: block;
+  #modalImg {
     height: 100%;
     width: 100%;
+  }
+
+  @media (min-width: 500px) {
+    #container {
+      background-color: var(--darkteal);
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 25vw);
+      grid-template-rows: repeat(2, 50vh);
+      position: relative;
+    }
   }
 </style>
 
 <div id="container">
-  <!-- {#each pics as pic}
-    <img src="{pic.src}" alt="{pic.description}">
-  {/each} -->
-  <img src="heart.png" alt="" on:click={showModalPic} />
-  <img src="ig.svg" alt="" on:click={showModalPic} />
-  <img src="heart.png" alt="" on:click={showModalPic} />
-  <img src="heart.png" alt="" on:click={showModalPic} />
-  <img src="heart.png" alt="" on:click={showModalPic} />
-  <img src="heart.png" alt="" on:click={showModalPic} />
-  <img src="heart.png" alt="" on:click={showModalPic} />
-  <img src="heart.png" alt="" on:click={showModalPic} />
+  <div class="thumbnail" style="background:url('images/cliff.png') center/cover no-repeat" on:click={showModalPic}></div>
+  <div class="thumbnail" style="background:url('images/cliffKiss.png') center/cover no-repeat" on:click={showModalPic}></div>
+  <div class="thumbnail" style="background:url('images/crowd.png') center center / cover no-repeat" on:click={showModalPic}></div>
+  <div class="thumbnail" style="background:url('images/dance.png') center center / cover no-repeat" on:click={showModalPic}></div>
+  <div class="thumbnail" style="background:url('images/dock.png') center center / cover no-repeat" on:click={showModalPic}></div>
+  <div class="thumbnail" style="background:url('images/beach.png') center center / cover no-repeat" on:click={showModalPic}></div>
+  <div class="thumbnail" style="background:url('images/dockAbove.png') right / cover no-repeat" on:click={showModalPic}></div>
+  <div class="thumbnail" style="background:url('images/jump.png') 55% 50%/400% no-repeat" on:click={showModalPic}></div>
 
   {#if showModal}
     <Modal on:close={clearModal}>
-      <img src="{modal.src}" alt="{modal.alt}" />
+      <div id="modalImg" style="background:url({modal.src}) {modal.src === "images/dockAbove.png" ? "right" : "center"} center / cover no-repeat">
+      </div>
     </Modal>
   {/if}
 </div>

@@ -22,7 +22,7 @@
     text-align: left;
     font-family: "Montserrat";
     font-size: 1.5em;
-    list-style: outside url('heart.png');
+    list-style: outside url('images/heart.png');
     margin: auto;
     width: 50%;
   }

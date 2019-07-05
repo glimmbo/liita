@@ -6,6 +6,7 @@
 </script>
 
 <style>
+/* moved to global.css */
 	section {
 		box-sizing: border-box;
 		height: 100vh;
